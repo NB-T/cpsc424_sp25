@@ -70,62 +70,62 @@ def partial_identity_matrix(n):
 TEST_CASES = [
     # Some small visible tests
     {
-        "name": "Test 1: 1x1 matrix",
-        "input": """1
-2
-3
-""",
-        "expected_output": [
-            "The resulting matrix C = A x B is:",
-            "6"
-        ]
-    },
-    {
-        "name": "Test 2: 2x2 matrices (simple)",
-        "input": """2
-1 2
-3 4
-5 6
-7 8
-""",
-        "expected_output": [
-            "The resulting matrix C = A x B is:",
-            "19 22",
-            "43 50"
-        ]
-    },
-    {
-        "name": "Test 3: 2x2 matrices (another example)",
-        "input": """2
-2 0
-0 2
-1 1
-2 2
-""",
-        "expected_output": [
-            "The resulting matrix C = A x B is:",
-            "2 2",
-            "4 4"
-        ]
-    },
-    {
-        "name": "Test 4: 3x3 identity check",
-        "input": """3
-1 0 0
-0 1 0
-0 0 1
-1 2 3
-4 5 6
-7 8 9
-""",
-        "expected_output": [
-            "The resulting matrix C = A x B is:",
-            "1 2 3",
-            "4 5 6",
-            "7 8 9"
-        ],
-        "hidden": False
-    },
+         "name": "Test 1: 1x1 matrix",
+         "input": """1
+ 2
+ 3
+ """,
+         "expected_output": [
+             "The resulting matrix C = A x B is:",
+             "6"
+         ]
+     },
+     {
+         "name": "Test 2: 2x2 matrices (simple)",
+         "input": """2
+ 1 2
+ 3 4
+ 5 6
+ 7 8
+ """,
+         "expected_output": [
+             "The resulting matrix C = A x B is:",
+             "19 22",
+             "43 50"
+         ]
+     },
+     {
+         "name": "Test 3: 2x2 matrices (another example)",
+         "input": """2
+ 2 0
+ 0 2
+ 1 1
+ 2 2
+ """,
+         "expected_output": [
+             "The resulting matrix C = A x B is:",
+             "2 2",
+             "4 4"
+         ]
+     },
+     {
+         "name": "Test 4: 3x3 identity check",
+         "input": """3
+ 1 0 0
+ 0 1 0
+ 0 0 1
+ 1 2 3
+ 4 5 6
+ 7 8 9
+ """,
+         "expected_output": [
+             "The resulting matrix C = A x B is:",
+             "1 2 3",
+             "4 5 6",
+             "7 8 9"
+         ],
+         "hidden": False
+ },
 ]
 
 ###############################################################################
@@ -159,8 +159,9 @@ def build_large_test(n, name, hidden=False, timeout=5):
     return test_dict
 
 # Build two n=500 tests (previously hidden, now fully visible)
-TEST_CASES.append(build_large_test(500, "Large Test 5: n=500 #1", hidden=False))
-TEST_CASES.append(build_large_test(500, "Large Test 6: n=500 #2", hidden=False))
+# TEST_CASES.append(build_large_test(500, "Large Test 5: n=500 #1", hidden=False))
+# TEST_CASES.append(build_large_test(500, "Large Test 6: n=500 #2", hidden=False))
+TEST_CASES.append(build_large_test(1000, "Large Test 7: n=1000 #3", hidden=False))
 
 ###############################################################################
 # Command-Line Autograder Logic
@@ -282,7 +283,7 @@ def main():
         total_max_score += t_res["max_score"]
 
         # Print time for each test
-        print(f"Test '{t_res['name']}' took {t_res['time_elapsed_seconds']:.4f} seconds.")
+        print(f"Test '{t_res['name']}' # took {t_res['time_elapsed_seconds']:.4f} seconds.")
 
     # 3. Summarize
     if total_max_score > 0:
